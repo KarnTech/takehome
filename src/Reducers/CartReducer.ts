@@ -46,7 +46,7 @@ export const initialCartState: Cart = {
   items: Object.values(Rings).map((ring) => ring),
   checkoutDetails: {
     "Item Total": getTotalPrice(),
-    "Gift Wrap": 4.99,
+    "Gift Wrap": Object.values(Rings).length * 4.99,
     discounts: getTotalDiscount(),
     total: getTotalPrice() + getTotalDiscount() + 4.99,
   },
@@ -85,7 +85,11 @@ export const reducer = (state: typeof initialCartState, action: actionType) => {
           ...state.checkoutDetails,
           "Item Total": getTotalPrice(state),
           discounts: getTotalDiscount(state),
-          total: getTotalPrice(state) + getTotalDiscount(state) + 4.99,
+          "Gift Wrap": state.items.length * 4.99,
+          total:
+            getTotalPrice(state) +
+            getTotalDiscount(state) +
+            state.items.length * 2,
         },
       };
   }

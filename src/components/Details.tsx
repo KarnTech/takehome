@@ -10,7 +10,7 @@ const Details: React.FC<DetailsProps> = ({ item }) => {
       {Object.entries(item.details).map(([key, value], i) => {
         if (Array.isArray(value)) {
           return value.map((val, i) => (
-            <div className="flex justify-between my-5">
+            <div className="flex justify-between my-5" key={i}>
               <p className="text-base text-gray-dark font-medium">
                 {key + " " + (i + 1) + ":"}
               </p>
@@ -21,7 +21,7 @@ const Details: React.FC<DetailsProps> = ({ item }) => {
           ));
         } else
           return (
-            <div className="flex justify-between my-5">
+            <div className="flex justify-between my-5" key={i}>
               <p className="text-base text-gray-dark font-medium">
                 {key + ":"}
               </p>

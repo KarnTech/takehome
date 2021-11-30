@@ -7,7 +7,9 @@ const Checkout: React.FC<CheckoutInfo> = (props) => {
       <div className="container mx-auto md:flex justify-center md:justify-between">
         <div>
           {Object.entries(props).map(([key, value], i) => (
-            <div className="flex justify-between my-5 w-400 mx-auto px-20">
+            <div
+              className="flex justify-between my-5 w-400 mx-auto px-20"
+              key={i}>
               <p className="text-tiny text-gray-dark font-bold">
                 {key.toUpperCase() + ":"}
               </p>
