@@ -30,7 +30,6 @@ const Item = () => {
                 <div className="border-t-2 border-blue-border mx-5"></div>
                 <div
                   onClick={() => {
-                    console.log(item.id);
                     dispatch({ type: actionKind.REMOVE, payload: item.id });
                     dispatch({
                       type: actionKind.UPDATE,
