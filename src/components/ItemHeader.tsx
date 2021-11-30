@@ -1,4 +1,3 @@
-import "./styles.css";
 interface ItemHeaderProps {
   name: string;
   img: string;
